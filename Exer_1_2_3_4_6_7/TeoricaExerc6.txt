@@ -1,0 +1,10 @@
+ - O metodo isDataValida tem que ser estatico, pois não é necessario uma 
+instancia para verificar a validade da data.
+
+ - O metodo isAnoBissexto tem que ser estatico, pois não ha necessidade de ter um 
+objeto da classe.
+
+ - Seria util versoes sobrecarregadas dos dois metodos acima sem argumentos, pois apos ter
+objetos criados dessa classe, poderiamos utilizar esse metodo sem passar argumentos,
+pois ele ja teria acesso aos dados daquele objeto. Assim, nao precisariamos nos preocupar
+com a passagem de parametros.

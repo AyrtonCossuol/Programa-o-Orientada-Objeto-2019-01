@@ -1,0 +1,2 @@
+O metodo compareTo não deve ser estatico, pois o mesmo nao precisa de comparar
+algo se nao possuir um objeto que possa usar esse metodo.
