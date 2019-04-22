@@ -6,7 +6,6 @@ import java.lang.Object;
 
 public class Data {
 	private int d, m, a;
-	String data="";
 	
 	//CONSTRUTORES
 	
@@ -60,33 +59,30 @@ public class Data {
 		return false;
 	}
 	
-	public String incrementa() throws Exception{
+	public void incrementa() throws Exception{
 		try{
-			setData(getDia()+1, getMes(), getAno());
+			this.setData(getDia()+1, getMes(), getAno());
 		}
 		catch(Exception dia){
 			try{
-				setData(1, getMes()+1, getAno());
+				this.setData(1, getMes()+1, getAno());
 			}
 			catch(Exception mes){
 				try{
-					setData(1, 1, getAno()+1);
+					this.setData(1, 1, getAno()+1);
 				}
 				catch(Exception ano){
-					setData(getDia(), getMes(),getAno());
-					System.out.println("Data invalida.");
+					this.setData(getDia(), getMes(),getAno());
 				}
 			}
 		}
-		return this.data;
 	}
 	
-	public String incrementa(int x) throws Exception{
+	public void incrementa(int x) throws Exception{
 		while(x > 0){
 			incrementa();
 			x--;
 		}
-		return this.data;
 	}
 	
 	public String toString(int d, int m, int a) {
@@ -113,31 +109,37 @@ public class Data {
 	}
 	
 	// Metodo de Interface Principal
-	@SuppressWarnings("static-access")
 	public void setData(int d, int m, int a) throws Exception {
-		this.d = d;
-		this.m = m;
-		this.a = a;
-		if(this.isDataValida(d,m,a)) {
-			this.data = this.toString(d,m,a);
-		}else {
-			throw new Exception("Data inv·lida.");
+		if (Data.isDataValida(d,m,a) == true) {
+			this.d = d;
+			this.m = m;
+			this.a = a;
+		}
+		else {
+			throw new Exception("Data Invalida");
 		}
 	}
-	public static void verificarECriaData(int d, int m, int a) throws Exception{
-		
+	public static Data verificarECriaData(int d, int m, int a){
+		try {
+			if (Data.isDataValida(d, m, a)) {
+				return new Data(d, m, a);
+			}
+			return null;
+		} catch (Exception e) {
+			return null;
+		}
 	}
 	
 	public void setData() throws Exception {
 		setData(1,1,1900);
 	}
 	
-	// dia como inteiro, o nome do mÍs como String e o ano como inteiro.
+	// dia como inteiro, o nome do m√™s como String e o ano como inteiro.
 	public void setData(int d, String m, int a) throws Exception {
 		int m_int = 0;
 		if(m.equals("janeiro")) m = "1" ;
 		if(m.equals("fevereiro")) m = "2" ;
-		if(m.equals("marÁo")) m = "3";
+		if(m.equals("mar√ßo")) m = "3";
 		if(m.equals("abril")) m = "4";
 		if(m.equals("maio")) m = "5";
 		if(m.equals("junho")) m = "6";
@@ -151,12 +153,12 @@ public class Data {
 		this.setData(d,m_int,a);
 	}
 	
-	// de uma data contendo somente o mÍs e ano (neste caso o dia receber· 1)
+	// de uma data contendo somente o m√™s e ano (neste caso o dia receber√° 1)
 	public void setData(int m, int a) throws Exception {
 		this.setData(1,m,a);
 	}
 
-	// de uma data completa  no formato String ìdd/mm/aaaaî, sendo possÌvel dia e mÍs com dois ou apenas 1 caractere.  Veja as dicas sobre a classe string a seguir.
+	// de uma data completa  no formato String ‚Äúdd/mm/aaaa‚Äù, sendo poss√≠vel dia e m√™s com dois ou apenas 1 caractere.  Veja as dicas sobre a classe string a seguir.
 	public void setData(String str) throws Exception {
 		int dia;	
 		int mes;
