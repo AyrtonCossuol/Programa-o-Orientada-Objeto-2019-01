@@ -20,7 +20,7 @@ public class Data extends Date {
 	}
 	
 	@SuppressWarnings("deprecation")
-	public void setMonth(String m){
+	public void setMonth(String m){                       //asadas
 		super.setMonth(Data.stringMonth(m) - 1);
 	}
 	
