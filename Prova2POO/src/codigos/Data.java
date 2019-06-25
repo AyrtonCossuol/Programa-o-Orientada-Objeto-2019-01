@@ -1,6 +1,6 @@
 package codigos;
 /**
- * Classe Data e definida com um dia, mês e ano para auxiliar as
+ * Classe Data e definida com um dia, mÃªs e ano para auxiliar as
  * demais classes quando for utiliza-la
  * <p>
  * 
@@ -10,7 +10,7 @@ package codigos;
 public class Data {
 	/** Dia informado pelo Usuario. */
 	private int dia;
-	/** Mês informado pelo Usuario.*/
+	/** MÃªs informado pelo Usuario.*/
 	private int mes; 
 	/** Ano informado pelo Usuario. */
 	private int ano;
@@ -25,12 +25,12 @@ public class Data {
 		this.setData(data);
 	}
 	/**
-	 * Contrutor para iniciar a Data com as variaveis Dia, Mês e Ano.
+	 * Contrutor para iniciar a Data com as variaveis Dia, MÃªs e Ano.
 	 * 
 	 * @param d Dia passado pelo Usuario
-	 * @param m Mês passado pelo Usuario
+	 * @param m MÃªs passado pelo Usuario
 	 * @param a Ano passado pelo Usuario
-	 * @throws Exception Tratamento para valores não adequados
+	 * @throws Exception Tratamento para valores nÃ£o adequados
 	 */
 	public Data(int d, int m, int a) throws Exception {
 		this.setData(d, m, a);
@@ -44,7 +44,7 @@ public class Data {
 		return this.dia;
 	}
 	/**
-	 * Captura o Mês passado pelo Usuario
+	 * Captura o MÃªs passado pelo Usuario
 	 * 
 	 * @return o mes do Usuario
 	 */
@@ -60,7 +60,7 @@ public class Data {
 		return this.ano;
 	}
 	/**
-	 * Modifica a String data separando todas as partes(dia, mês, ano), 
+	 * Modifica a String data separando todas as partes(dia, mÃªs, ano), 
 	 * em Strings proprias e logo apos, atribuido cada String
 	 * em um Integer
 	 * 
@@ -79,10 +79,10 @@ public class Data {
 		this.setData(d,m,a);
 	}
 	/**
-	 * Modifica a Data recebendo o Dia, Mês e Ano 
+	 * Modifica a Data recebendo o Dia, MÃªs e Ano 
 	 * 
 	 * @param d Dia passado pelo Usuario
-	 * @param m Mês passado pelo Usuario
+	 * @param m MÃªs passado pelo Usuario
 	 * @param a Ano passado pelo Usuario
 	 * @throws Exception Tratamento dos valores atribuidos a Data
 	 */
@@ -97,13 +97,13 @@ public class Data {
 		}
 	}
 	/**
-	 * Método boleano em que retorna se a data é ou não valida
+	 * MÃ©todo boleano em que retorna se a data Ã© ou nÃ£o valida
 	 * para ser utilizada 
 	 * 
 	 * @param d Dia passado pelo Usuario
-	 * @param m Mês passado pelo Usuario
+	 * @param m MÃªs passado pelo Usuario
 	 * @param a Ano passado pelo Usuario
-	 * @return false Para quando a Data não for valida
+	 * @return false Para quando a Data nÃ£o for valida
 	 * @return true Para quando a data for valida
 	 */
 	public static boolean isDataValida(int d, int m, int a) {
@@ -126,12 +126,12 @@ public class Data {
 		return true;
 	}
 	/**
-	 * Método boleano em que retorna verdadeiro para quando o ano for 
-	 * bissexto e falso para quando não for 
+	 * MÃ©todo boleano em que retorna verdadeiro para quando o ano for 
+	 * bissexto e falso para quando nÃ£o for 
 	 * 
 	 * @param a Valor do ano passado pelo Usuario
 	 * @return Retorna verdadeiro quando for bissexto
-	 * @return Retorna falso quando não for bissexto
+	 * @return Retorna falso quando nÃ£o for bissexto
 	 */
 	public static boolean isBissexto(int a) {
 		if ((a % 4 == 0) && (a % 100 != 0)) {
@@ -140,8 +140,8 @@ public class Data {
 		return false;
 	}
 	/**
-	 * Método compareTo em que irá receber duas datas e retorna quando uma 
-	 * é maior que a outra vice versa para o usuario.
+	 * MÃ©todo compareTo em que irÃ¡ receber duas datas e retorna quando uma 
+	 * Ã© maior que a outra vice versa para o usuario.
 	 * 
 	 * @param data1 Primeira data passada pelo Usuario
 	 * @param data2 Segunda data Passada pelo Usuario
@@ -149,7 +149,7 @@ public class Data {
 	 * @return 0 para quando as duas datas forem iguais
 	 * @return 1 para quando uma data for maior que a outra
 	 */
-	public static int compareTo(Data data1, Data data2) {   //se data_1 for menor retorna -1
+	public static int compareTo(Data data1, Data data2) {
 		if (data1.getAno() > data2.getAno()) return 1;
 		else { 
 			if (data1.getAno() < data2.getAno()) return -1;
@@ -171,8 +171,8 @@ public class Data {
 		}
 	}
 	/**
-	 * Sobreposição do método toString para retornar a Data ao Usuario
-	 * tendo uma organização de colocar do seguinte formato: dd/mm/aaaa
+	 * SobreposiÃ§Ã£o do mÃ©todo toString para retornar a Data ao Usuario
+	 * tendo uma organizaÃ§Ã£o de colocar do seguinte formato: dd/mm/aaaa
 	 * 
 	 * @return retorna um tipo String com todos os dados 
 	 */
