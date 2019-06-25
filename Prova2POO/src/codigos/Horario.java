@@ -1,7 +1,7 @@
 package codigos;
 /**
- * Classe Horario é definida por uma hora, minuto e segundos, auxiliando 
- * nas utilizações das Classes
+ * Classe Horario Ã© definida por uma hora, minuto e segundos, auxiliando 
+ * nas utilizaÃ§Ãµes das Classes
  * <p>
  * 
  * @author Ayrton S. C.
@@ -62,7 +62,7 @@ public class Horario {
 	}
 	/**
 	 * Modifica o Horario recebendo uma hora, os minutos e os segundos,
-	 * e ainda verificando se esses paramentros são validos utilizando
+	 * e ainda verificando se esses paramentros sÃ£o validos utilizando
 	 * o isHorarioValida. 
 	 * 
 	 * @param h Hora passada pelo Usuario
@@ -81,14 +81,14 @@ public class Horario {
 		}
 	}
 	/**
-	 * Método estatico e boleano em que verifica se o horario esta adequado com
+	 * MÃ©todo estatico e boleano em que verifica se o horario esta adequado com
 	 * o utilizado convencionalmente 
 	 * 
 	 * @param h Hora passada pelo Usuario
 	 * @param m Minuto passada pelo Usuario
 	 * @param s Segundo passada pelo Usuario
-	 * @return Retorna verdadeiro se o horario é convencional
-	 * @return Retorna falso se o horario não é convencional
+	 * @return Retorna verdadeiro se o horario Ã© convencional
+	 * @return Retorna falso se o horario nÃ£o Ã© convencional
 	 */
 	public static boolean isHorarioValida(int h, int m, int s) {
 		if (h >= 0 && m >= 0 && s >= 0 && h < 24 && m < 60 && s < 60) {
@@ -97,7 +97,7 @@ public class Horario {
 		return false;
 	}
 	/**
-	 * Modifica o horario passado como String para três interios h, m e s
+	 * Modifica o horario passado como String para trÃªs interios h, m e s
 	 * respeitando a ordem 
 	 * 
 	 * @param horario Horario passado como String pelo Usuario
@@ -115,16 +115,16 @@ public class Horario {
 		this.setHorario(h, m, s);
 	}
 	/**
-	 * Método estatico em que compara dois horarios passados como parametro
+	 * MÃ©todo estatico em que compara dois horarios passados como parametro
 	 * 
 	 * @param h1 Horario 1 passado pelo Usuario
 	 * @param h2 Horario 2 passado pelo Usuario
-	 * @return -1 para quando um horario é menos que o outro
-	 * @return  0 para quando um horario é igual o outro
+	 * @return -1 para quando um horario Ã© menos que o outro
+	 * @return  0 para quando um horario Ã© igual o outro
 	 * @return  1 para quando um horario e maior que o outro
 	 */
 	public static int compareTo(Horario h1, Horario h2) {
-		if (h1.getHora() > h2.getHora()) return 1;   //se h1 for menor retorna -1
+		if (h1.getHora() > h2.getHora()) return 1;
 		else {
 			if (h1.getHora() < h2.getHora()) return -1;
 			else {
@@ -145,7 +145,7 @@ public class Horario {
 		}
 	}
 	/**
-	 * Sobreposição do método toString em que retorna a hora, os minutos e os segundos,
+	 * SobreposiÃ§Ã£o do mÃ©todo toString em que retorna a hora, os minutos e os segundos,
 	 * nessa ordem:  hh:mm:ss
 	 * 
 	 * @return uma String com o horario
